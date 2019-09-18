@@ -6,21 +6,16 @@
 */
 int is_palindrome(listint_t **head)
 {
-	listint_t *beg = *head, *end = NULL, *it = *head;
+	int data[100];
+	short count, i;
 
 	if (!head || !*head)
 		return (1);
-	while (1)
-	{
-		while (it && it->next != end)
-			it = it->next;
-		if (!it)
-			return (1);
-		end = it;
-		if (beg->n != end->n)
+	for (count = 0; *head; *head = (*head)->next)
+		data[count++] = (*head)->n;
+	count--;
+	for(i = 0; i < count; i++, count--)
+		if (data[i] != data[count])
 			return (0);
-		beg = beg->next;
-		it = beg;
-	}
 	return (1);
 }
