@@ -6,7 +6,7 @@
 */
 int is_palindrome(listint_t **head)
 {
-	int data[100];
+	int data[1000];
 	short count, i;
 
 	if (!head || !*head)
