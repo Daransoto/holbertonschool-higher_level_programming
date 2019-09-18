@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <Python.h>
 #include <string.h>
+/**
+* print_python_list_info - Prints info about Python files.
+* @p: Python object.
+*/
 void print_python_list_info(PyObject *p)
 {
 	int i;
@@ -11,7 +15,7 @@ void print_python_list_info(PyObject *p)
 	printf("[*] Allocated =  %d\n", (int)(Py_SIZE(p)));
 	for (i = 0; i < (int)PyList_Size(p); i++)
 	{
-		if(!strcmp("I", (char *)Py_TYPE(PyList_GetItem(p, i))))
+		if (!strcmp("I", (char *)Py_TYPE(PyList_GetItem(p, i))))
 		{
 			strcpy(type, "str");
 		}
@@ -33,5 +37,5 @@ void print_python_list_info(PyObject *p)
 		}
 		printf("Element %d: %s\n", i, type);
 	}
-	
+
 }
