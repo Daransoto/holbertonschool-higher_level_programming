@@ -14,7 +14,7 @@ int is_palindrome(listint_t **head)
 	for (count = 0; *head; *head = (*head)->next)
 		data[count++] = (*head)->n;
 	count--;
-	for(i = 0; i < count; i++, count--)
+	for (i = 0; i < count; i++, count--)
 		if (data[i] != data[count])
 			return (0);
 	return (1);
