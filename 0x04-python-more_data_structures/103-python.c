@@ -10,10 +10,10 @@ void print_python_list(PyObject *p)
 	int i;
 
 	puts("[*] Python list info");
-	printf("[*] Size of the Python List = %d\n", (int)PyList_Size(p));
-	printf("[*] Allocated = %d\n", (int)(((PyListObject *)p)->allocated));
+	printf("[*] Size of the Python List = %ld\n", PyList_Size(p));
+	printf("[*] Allocated = %ld\n", (((PyListObject *)p)->allocated));
 	for (i = 0; i < (int)PyList_Size(p); i++)
-		printf("Element %d: %s\n", i, PyList_GET_ITEM(p, i)->ob_type->tp_name);
+		printf("Element %d: %s\n", i, PySequence_GetItem(p, i)->ob_type->tp_name);
 
 }
 /**
