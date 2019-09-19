@@ -14,5 +14,10 @@ def roman_to_int(roman_string):
         if roman_string[iterator - 1] not in conv:
             return 0
         prev = conv[roman_string[iterator - 1]]
+        if iterator > 1:
+            if roman_string[iterator - 2] not in conv:
+                return 0
+            if prev < curr and conv[roman_string[iterator - 2]] <= prev:
+                return 0
         res += prev if prev >= curr else -prev
     return res
