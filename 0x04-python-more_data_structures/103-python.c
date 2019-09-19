@@ -31,14 +31,17 @@ void print_python_bytes(PyObject *p)
 		return;
 	}
 	printf("  size: %ld\n", PyBytes_Size(p));
-	printf("  trying string: %s\n", PyBytes_AsString(p));
-	bytes_to_show = PyBytes_Size(p) + 1;
-	if (bytes_to_show > 10)
-		bytes_to_show = 10;
-	printf("  first %d bytes:", bytes_to_show);
-	for (i = 0; i < bytes_to_show; i++)
-	{
-		printf(" %02x", (unsigned char)*(PyBytes_AsString(p) + i));
-	}
-	puts("");
+    if (PyBytes_Size(p) > 0)
+    {
+	    printf("  trying string: %s\n", PyBytes_AsString(p));
+	    bytes_to_show = PyBytes_Size(p) + 1;
+	    if (bytes_to_show > 10)
+		    bytes_to_show = 10;
+    	printf("  first %d bytes:", bytes_to_show);
+	    for (i = 0; i < bytes_to_show; i++)
+    	{
+	    	printf(" %02x", (unsigned char)*(PyBytes_AsString(p) + i));
+    	}
+	    puts("");
+    }
 }
