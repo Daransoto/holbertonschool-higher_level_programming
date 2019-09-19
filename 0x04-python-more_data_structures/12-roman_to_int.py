@@ -19,5 +19,12 @@ def roman_to_int(roman_string):
                 return 0
             if prev < curr and conv[roman_string[iterator - 2]] <= prev:
                 return 0
+        if iterator > 2:
+            if prev == curr and conv[roman_string[iterator - 2]] == prev:
+                if roman_string[iterator - 3] not in conv:
+                    return 0
+                if conv[roman_string[iterator - 3]
+                        ] == conv[roman_string[iterator - 2]]:
+                    return 0
         res += prev if prev >= curr else -prev
     return res
