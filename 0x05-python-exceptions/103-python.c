@@ -79,7 +79,7 @@ void print_python_float(PyObject *p)
 	}
 	fflush(stdout);
 	printf("  value: %.17g", PyFloat_AsDouble(p));
-	if (PyFloat_AsDouble(p) - (unsigned long int)PyFloat_AsDouble(p) != 0)
+	if (PyFloat_AsDouble(p) - (long int)PyFloat_AsDouble(p) != 0)
 		puts("");
 	else
 		puts(".0");
