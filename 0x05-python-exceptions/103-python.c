@@ -78,6 +78,6 @@ void print_python_float(PyObject *p)
 		return;
 	}
 	fflush(stdout);
-	printf("  value: %s", PyOS_double_to_string(PyFloat_AsDouble(p), 'g', 17,
+	printf("  value: %s\n", PyOS_double_to_string(PyFloat_AsDouble(p), 'r', 0,
 Py_DTSF_ADD_DOT_0, NULL));
 }
