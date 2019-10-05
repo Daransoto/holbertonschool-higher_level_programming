@@ -17,7 +17,7 @@ def text_indentation(text):
     Args:
         text (str): Text to be formatted.
     """
-    newline = 0
+    newline = 1
     spaces = 0
     if type(text) is not str:
         raise TypeError("text must be a string")
@@ -25,6 +25,8 @@ def text_indentation(text):
         if char == ' ':
             spaces += 1
         elif char == '.' or char == '?' or char == ':':
+            if not newline:
+                print(" " * spaces, end="")
             print(char + "\n")
             newline = 1
         elif not newline:
