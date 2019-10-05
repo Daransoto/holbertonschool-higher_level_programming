@@ -1,0 +1,6 @@
+>>> a = __import__("5-text_indentation")
+>>> a.text_indentation("Hello. I'm Darwin")
+Hello.
+<BLANKLINE>
+I'm Darwin
+

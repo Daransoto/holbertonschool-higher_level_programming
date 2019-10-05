@@ -1,0 +1,3 @@
+>>> a = __import__("101-lazy_matrix_mul")
+>>> print(a.lazy_matrix_mul([[1, 2]], [[1, 1], [2, 1]]))
+[[5 3]]

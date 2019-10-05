@@ -1,5 +1,22 @@
 #!/usr/bin/python3
+"""Text indentation.
+
+This module contains just one function that indents text.
+
+Example:
+    text_indentation("Hello. I'm Darwin")
+    Should return:
+    Hello.
+    I'm Darwin
+"""
+
+
 def text_indentation(text):
+    """Function that separates a text when a . ? or : is found.
+
+    Args:
+        text (str): Text to be formatted.
+    """
     newline = 0
     spaces = 0
     if type(text) is not str:

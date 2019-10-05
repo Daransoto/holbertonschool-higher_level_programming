@@ -5,3 +5,17 @@
 58
 >>> a.add_integer(5, 24.2)
 29
+>>> a.add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> a.add_integer(5)
+103
+>>> a.add_integer("sdsa")
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> a.add_integer(5, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> a.add_integer(34, 54, 67)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given

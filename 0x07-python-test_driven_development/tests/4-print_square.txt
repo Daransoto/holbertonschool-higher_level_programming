@@ -1,0 +1,5 @@
+>>> a = __import__("4-print_square")
+>>> a.print_square(2)
+##
+##
+

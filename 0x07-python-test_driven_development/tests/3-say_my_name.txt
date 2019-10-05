@@ -1,0 +1,4 @@
+>>> a = __import__('3-say_my_name')
+>>> a.say_my_name("Julien", "Barbier")
+My name is Julien Barbier
+

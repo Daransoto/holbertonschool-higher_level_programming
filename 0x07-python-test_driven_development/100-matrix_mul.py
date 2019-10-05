@@ -1,5 +1,25 @@
 #!/usr/bin/python3
+"""Matrix multiplication.
+
+This module contains only one function to multiply two matrices.
+
+Example:
+    matrix_mul([[1, 2]], [[1, 1], [2, 1]])
+    Should return [[5, 3]]
+"""
+
+
 def matrix_mul(m_a, m_b):
+    """This function multiplies two matrices.
+
+    Args:
+        m_a (List of lists): First matrix.
+        m_b (List of lists): Second matrix.
+
+    Returns:
+        new (List of lists): Result of the multiplication of the two matrices.
+
+    """
     rows_a = 0
     cols_a = 0
     rows_b = 0
