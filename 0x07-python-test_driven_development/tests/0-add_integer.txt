@@ -35,3 +35,6 @@ TypeError: a must be an integer
 >>> a.add_integer(None)
 Traceback (most recent call last):
 TypeError: a must be an integer
+>>> a.add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: Number too large
