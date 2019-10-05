@@ -19,3 +19,5 @@ TypeError: b must be an integer
 >>> a.add_integer(34, 54, 67)
 Traceback (most recent call last):
 TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+>>> a.add_integer(2.5, 3.7)
+5
