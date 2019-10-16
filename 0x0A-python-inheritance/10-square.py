@@ -2,9 +2,9 @@
 """
 This module contains the class Square.
 """
-
-
 Rectangle = __import__("9-rectangle").Rectangle
+
+
 class Square(Rectangle):
     """
     Definition of a square
