@@ -21,6 +21,9 @@ TypeError: print_sorted() takes 1 positional argument but 2 were given
 >>> l = a.MyList()
 >>> l.print_sorted()
 []
->>> my_list = a.MyList(None)
+>>> l2 = a.MyList(None)
 Traceback (most recent call last):
 TypeError: 'NoneType' object is not iterable
+>>> l2 = a.MyList(2.5)
+Traceback (most recent call last):
+TypeError: 'float' object is not iterable
