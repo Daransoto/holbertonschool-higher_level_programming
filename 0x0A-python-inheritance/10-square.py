@@ -61,6 +61,6 @@ class Square(Rectangle):
         """
         Initializer for the square class.
         """
-        self.integer_validator("Size", size)
+        self.integer_validator("size", size)
         self.__size = size
         super().__init__(self.__size, self.__size)
