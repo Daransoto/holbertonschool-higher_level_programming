@@ -27,3 +27,12 @@ TypeError: 'NoneType' object is not iterable
 >>> l2 = a.MyList(2.5)
 Traceback (most recent call last):
 TypeError: 'float' object is not iterable
+>>> isinstance(l, a.MyList)
+True
+>>> my_list = a.MyList(range(3))
+>>> my_list.append(-10)
+>>> my_list.print_sorted()
+[-10, 0, 1, 2]
+>>> my_list = a.MyList(True)
+Traceback (most recent call last):
+TypeError: 'bool' object is not iterable
