@@ -46,3 +46,6 @@ TypeError: test must be an integer
 >>> bg.integer_validator("test", None)
 Traceback (most recent call last):
 TypeError: test must be an integer
+>>> bg.integer_validator("test", {2, 5})
+Traceback (most recent call last):
+TypeError: test must be an integer
