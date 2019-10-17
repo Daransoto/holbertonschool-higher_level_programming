@@ -26,3 +26,5 @@ while True:
             elif value > 0:
                 print("{}: {:d}".format(key, value))
         break
+    except Exception:
+        break
