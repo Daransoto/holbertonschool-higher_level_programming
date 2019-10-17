@@ -24,4 +24,5 @@ for line in maps:
     mem.write(bytes(argv[3], "ASCII"))
     maps.close()
     mem.close()
+    print("String modified!")
     break
