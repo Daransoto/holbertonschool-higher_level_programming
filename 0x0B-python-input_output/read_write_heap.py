@@ -5,7 +5,7 @@ This script replaces a string on the heap
 
 
 from sys import argv
-if len(argv) != 4:
+if len(argv) != 4 or argv[1] == "" or argv[2] == "":
     print("Usage: ./read_write_heap.py pid search replace")
     exit(1)
 maps = open('/proc/{}/maps'.format(argv[1]), 'r')
