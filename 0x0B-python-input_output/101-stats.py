@@ -7,11 +7,13 @@ This script parses logs.
 res = {"0": 0, "200": 0, "301": 0, "400": 0, "401": 0, "403": 0, "404": 0,
        "405": 0, "500": 0}
 i = 0
+e = 0
 while True:
     try:
         i += 1
         logs = input()
-        if logs.split(' ')[7] not in res.keys():
+        if logs.split(' ')[7] not in res.keys() or e:
+            e = 1
             continue
         res[logs.split(' ')[7]] += 1
         res["0"] += int(logs.split(' ')[8])
