@@ -11,6 +11,8 @@ while True:
     try:
         i += 1
         logs = input()
+        if logs.split(' ')[7] not in res.keys():
+            continue
         res[logs.split(' ')[7]] += 1
         res["0"] += int(logs.split(' ')[8])
         if i % 10 == 0:
