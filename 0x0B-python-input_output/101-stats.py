@@ -19,7 +19,7 @@ while True:
                     print("{}: {:d}".format("File size", value))
                 elif value > 0:
                     print("{}: {:d}".format(key, value))
-    except KeyboardInterrupt:
+    except (KeyboardInterrupt, EOFError):
         for key, value in sorted(res.items()):
             if key == "0":
                 print("{}: {:d}".format("File size", value))
