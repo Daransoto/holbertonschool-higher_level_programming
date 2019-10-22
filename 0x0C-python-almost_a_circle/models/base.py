@@ -40,6 +40,7 @@ class Base:
         with open(cls.__name__ + ".json", "w", encoding='utf-8') as f:
             if list_objs is None or list_objs == []:
                 f.write("[]")
+                return
             list_dic = list()
             for item in list_objs:
                 list_dic.append(item.to_dictionary())
