@@ -72,12 +72,15 @@ class Base:
         """
         Function that loads from a json file.
         """
-        with open(cls.__name__ + ".json", "r", encoding="utf-8") as f:
-            elems = cls.from_json_string(f.read())
-            ans = []
-            for item in elems:
-                ans.append(cls.create(**item))
-            return ans
+        try:
+            with open(cls.__name__ + ".json", "r", encoding="utf-8") as f:
+                elems = cls.from_json_string(f.read())
+                ans = []
+                for item in elems:
+                    ans.append(cls.create(**item))
+                return ans
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
