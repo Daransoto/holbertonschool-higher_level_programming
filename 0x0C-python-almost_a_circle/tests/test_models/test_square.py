@@ -69,3 +69,44 @@ class TestSquare(unittest.TestCase):
         s1 = Square(3, 1, 2, 45)
         s1_d = s1.to_dictionary()
         self.assertDictEqual(s1_d, {'x': 1, 'size': 3, 'id': 45, 'y': 2})
+
+    def test_wrong_size(self):
+        """ Test for wrong type for size. """
+        with self.assertRaises(TypeError):
+            s1 = Square("nope")
+
+    def test_size_zero(self):
+        """ Test for a size of zero. """
+        with self.assertRaises(ValueError):
+            s1 = Square(0)
+
+    def test_wrong_type_x(self):
+        """ Test for a wrong type for x. """
+        with self.assertRaises(TypeError):
+            s1 = Square(10, "nope")
+
+    def test_wrong_type_y(self):
+        """ Test for a wrong type for y. """
+        with self.assertRaises(TypeError):
+            s1 = Square(10, "nope")
+
+    def test_size_neg(self):
+        """ Test for a negative size. """
+        with self.assertRaises(ValueError):
+            s1 = Square(-1)
+
+    def test_x_neg(self):
+        """ Test for a negative x. """
+        with self.assertRaises(ValueError):
+            s1 = Square(1, -1)
+
+    def test_y_neg(self):
+        """ Test for a negative y. """
+        with self.assertRaises(ValueError):
+            s1 = Square(1, 1, -1)
+
+    def test_to_dict_with_arg(self):
+        """ Test calling to_dictionary function with argument. """
+        s1 = Square(2)
+        with self.assertRaises(TypeError):
+            s1.to_dictionary(1)
