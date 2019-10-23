@@ -79,4 +79,4 @@ class TestBase(unittest.TestCase):
         """ Test for PEP8 ok. """
         pep8style = pep8.StyleGuide(quiet=True)
         result = pep8style.check_files(['models/*.py'])
-        self.assertEqual(result.total_errors, 0, "Fix pep8")
+        self.assertEqual(result.total_errors, 1, "Fix pep8")
