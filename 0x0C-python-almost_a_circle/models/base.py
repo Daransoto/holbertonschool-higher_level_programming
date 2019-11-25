@@ -4,6 +4,7 @@ This module contains the class Base.
 """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -39,6 +40,7 @@ class Base:
         with open(cls.__name__ + ".json", "w", encoding='utf-8') as f:
             if list_objs is None or list_objs == []:
                 f.write("[]")
+                return
             list_dic = list()
             for item in list_objs:
                 list_dic.append(item.to_dictionary())
@@ -70,12 +72,15 @@ class Base:
         """
         Function that loads from a json file.
         """
-        with open(cls.__name__ + ".json", "r", encoding="utf-8") as f:
-            elems = cls.from_json_string(f.read())
-            ans = []
-            for item in elems:
-                ans.append(cls.create(**item))
-            return ans
+        try:
+            with open(cls.__name__ + ".json", "r", encoding="utf-8") as f:
+                elems = cls.from_json_string(f.read())
+                ans = []
+                for item in elems:
+                    ans.append(cls.create(**item))
+                return ans
+        except FileNotFoundError:
+            return []
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -108,3 +113,35 @@ class Base:
                     kwargs[key] = int(val)
                 ans.append(cls.create(**kwargs))
             return ans
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Function that draws squares and rectangles.
+        """
+        my_t = turtle.Turtle()
+        for rect in list_rectangles:
+            my_t.setheading(0)
+            my_t.penup()
+            my_t.goto(rect.x, rect.y)
+            my_t.pendown()
+            my_t.forward(rect.width)
+            my_t.right(90)
+            my_t.forward(rect.height)
+            my_t.right(90)
+            my_t.forward(rect.width)
+            my_t.right(90)
+            my_t.forward(rect.height)
+        for squ in list_squares:
+            my_t.setheading(0)
+            my_t.penup()
+            my_t.goto(squ.x, squ.y)
+            my_t.pendown()
+            my_t.forward(squ.size)
+            my_t.right(90)
+            my_t.forward(squ.size)
+            my_t.right(90)
+            my_t.forward(squ.size)
+            my_t.right(90)
+            my_t.forward(squ.size)
+        input()
