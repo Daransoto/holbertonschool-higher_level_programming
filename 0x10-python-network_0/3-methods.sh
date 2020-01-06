@@ -1,3 +1,3 @@
 #!/bin/bash
 # This script shows allowed methods.
-curl -sI "$1" | grep Allowed
+curl -sI "$1" | grep Allow
