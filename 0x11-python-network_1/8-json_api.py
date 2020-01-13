@@ -10,11 +10,10 @@ if len(sys.argv) > 1:
     value["q"] = sys.argv[1]
 response = requests.post("http://0.0.0.0:5000/search_user", data=value)
 try:
-    if not response or response.json() in ["", {}, None]:
+    empty = ["", {}, None]
+    if "id" not in response.json().keys() or \
+       "name" not in response.json().keys():
         print("No result")
-    else if "id" not in response.json().keys() or "name" not in \
-       response.json().keys():
-        raise ValueError
     else:
         print("[{}] {}".format(response.json().get("id"),
                                response.json().get("name")))
