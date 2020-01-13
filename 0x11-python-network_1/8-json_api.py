@@ -13,6 +13,7 @@ try:
     if not response or response.json() in ["", {}, None]:
         print("No result")
     else:
-        print("[{}] {}".format(response.json()["id"], response.json()["name"]))
+        print("[{}] {}".format(response.json().get("id"),
+                               response.json().get("name")))
 except ValueError:
     print("Not a valid JSON")
