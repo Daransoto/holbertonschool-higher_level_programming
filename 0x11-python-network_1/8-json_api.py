@@ -11,7 +11,7 @@ if len(sys.argv) > 1:
 response = requests.post("http://0b77dee8aa88.19.hbtn-cod.io:5000/search_user",
                          data=value)
 try:
-    if not response.json():
+    if response.json() in ["", {}, None]:
         print("No result")
     else:
         print("[{}] {}".format(response.json()["id"], response.json()["name"]))
