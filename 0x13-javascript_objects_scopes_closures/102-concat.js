@@ -1,5 +1,5 @@
 #!/usr/bin/node
-var fs = require('fs');
+const fs = require('fs');
 let f1;
 let f2;
 let res;
