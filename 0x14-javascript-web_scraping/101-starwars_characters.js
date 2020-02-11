@@ -10,7 +10,7 @@ request('https://swapi.co/api/films/' + process.argv[2], function (err, res, bod
         if (err) console.log(err);
         else {
           dict[i] = JSON.parse(body2).name;
-          if (i === characters.length - 1) for (const key in dict) console.log(dict[key]);
+          if (Object.entries(dict).length === characters.length) for (const key in dict) console.log(dict[key]);
         }
       });
     }
