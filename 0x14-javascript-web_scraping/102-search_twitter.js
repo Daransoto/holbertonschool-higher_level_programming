@@ -12,7 +12,7 @@ request.post({ url: 'https://api.twitter.com/oauth2/token', headers: headers, qs
     request.get({ url: 'https://api.twitter.com/1.1/search/tweets.json', headers: headers2, qs: data2 }, function (err2, res2, body2) {
       if (err2) console.log(err2);
       else {
-        for (const stat of JSON.parse(body2).statuses) console.log(`[${stat.id}] ${stat.text} by ${stat.user.name}`);
+        for (const stat of JSON.parse(body2).statuses) for (let i = 1; i < 6; i++) console.log(`[${stat.id}] ${stat.text} by ${stat.user.name}`);
       }
     });
   }
